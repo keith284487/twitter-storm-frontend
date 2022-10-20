@@ -1,0 +1,5 @@
+font-family: 'Open Sans', sans-serif;
+
+1. Find fonts
+2. Upload https://www.fontsquirrel.com/tools/webfont-generator
+3. Use fixed files 

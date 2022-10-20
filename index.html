@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Default meta -->
+    <title>Twitter storm opp manager</title>
+    <meta name="Description" content="Description"/>
+
+    <!-- Default libs scripts -->
+    <script src="./vendors/jquery-3.5.1.min.js"></script>
+    <script src="./vendors/typed.js"></script>
+    <script src="./vendors/jquery.finger.min.js"></script>
+
+    <!-- Default concated dev script -->
+    <script src="./dist/scripts.js"></script>
+</head>
+
+<body>
+    <!-- Form for data -->
+    <form method="POST" action="http://localhost:3000/imageUpload" id="form" enctype="multipart/form-data">
+
+    <div id="step-1">
+        <div class="step-1-title">
+            Name
+            <div class="step-1-title-name">
+                <input type="name" id="name" name="name" value="" placeholder="5-20 symbols">
+            </div>
+        </div>
+        <div class="step-1-color">
+            Choose colors
+            <div class="step-1-color-background">
+                <input type="color" id="background" name="background" value="#e66465">
+                <label for="background">Background</label>
+            </div>
+            <div class="step-1-color-text">
+                <input type="color" id="text" name="text" value="#e66465">
+                <label for="text">Text</label>
+            </div>
+        </div>
+        <div class="step-1-date">
+            Finish date
+            <input type="date" name="fdate" id="fdate" />
+
+        </div>
+        <div class="step-1-controls">
+            <div class="step-1-controls-save">
+                Save and go next
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="step-2">
+        <div class="step-2-text-1">
+            Text 1
+            <textarea id="text-1" name="text-1" rows="5" cols="33">
+            </textarea>
+        </div>
+        <div class="step-2-text-2">
+            Text 2
+            <textarea id="text-2" name="text-2" rows="5" cols="33">
+            </textarea>
+        </div>
+        <div class="step-2-text-3">
+            Text 3
+            <textarea id="text-3" name="text-3" rows="5" cols="33">
+            </textarea>
+        </div>
+        <!--<div class="step-2-text-4">
+            Text 4
+            <textarea id="text-4" name="text-4" rows="5" cols="33">
+            </textarea>
+        </div>-->
+
+        <div class="step-2-controls">
+            <div class="step-2-controls-back">
+                Back
+            </div>
+            <div class="step-2-controls-save">
+                Save and go next
+            </div>
+        </div>
+
+    </div>
+
+    <div id="step-3">
+        <div class="step-3-upload">
+            <label for="image">Image Upload</label>
+            <input type="file" name="images" id="step-3-upload-images" accept="image/*" multiple>
+        </div>
+        <input type="submit" class="step-3-upload-button" value="Save">
+        
+        <div class="step-3-controls">
+            <div class="step-3-controls-back">
+                Back
+            </div>
+            <div class="step-3-controls-save">
+                Save and finish
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ETC :: Default audio -->
+    <audio class="music" preload="auto">
+        <source src="" type="audio/mpeg" />
+    </audio>
+
+    <!-- ETC :: Preloader for images -->
+    <img src="" class="preloaderImage">
+
+    <!-- Typewriter for the start -->
+    <div id="typewriter-wrapper">
+        <span id="typewriter"></span>
+
+    </div>
+
+     <!-- ETC :: Block non mobiles  
+    <div id="block-non-mobile">
+        <img src="./Images/Elements-mobile-only.png" class="block-non-mobile-image">
+    </div>
+    -->
+    </form>
+</body>
+
+</html>
