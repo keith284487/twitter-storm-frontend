@@ -16,11 +16,32 @@ $(document).ready(function () {
     });
 
     //Ini our events
-    iniEvents ()
+    iniEvents ();
 
+    //Update date of the calendar form
     var current = new Date;
     document.getElementById('fdate').valueAsDate = new Date(current.getTime() + (86400000 * 10));
 
+    //Change preview colors
+    var bgColor = $('#background').val();
+    var textColor = $('#text').val();
+
+    $('#preview').css({'background-color':bgColor,'color':textColor});
+
+    //Handling the form submission
+     $(function() {
+        //What happens after succesful submits
+        $('#form').ajaxForm(function() {
+            
+            //Switching to finish screnn
+            changeToScreen('#step-4');
+            
+            //Reloading page after n secs 
+            setTimeout(function(){location.reload();},5000)
+            
+
+        });
+      });
 
     //Preloading fonts
     /*var newStyle = document.createElement('style');
