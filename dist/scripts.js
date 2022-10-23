@@ -140,7 +140,7 @@ function iniEvents (){
     $('.step-2-controls-save').on('click', function(){
         
         if ($('#text-1')[0].validity.valid){
-            changeToScreen('#step-3');
+            changeToScreen('#step-5');
         } else {
             alert('Please add at least one text ^_^')
         }
@@ -151,9 +151,21 @@ function iniEvents (){
         changeToScreen('#step-1');
     })
 
+    //Step 3 click save 
+    $('.step-5-controls-save').on('click', function(){
+        
+        changeToScreen('#step-3');
+        
+    })
+
+    //Click back
+    $('.step-5-controls-back').on('click', function(){
+        changeToScreen('#step-2');
+    })
+
     //Step 3 click back 
     $('.step-3-controls-back').on('click', function(){
-        changeToScreen('#step-2');
+        changeToScreen('#step-5');
     })
 
     //Saving form
@@ -182,9 +194,19 @@ function changeToScreen (toScreen){
     console.log("Changing screen to: " + toScreen);
    
     //Switch off all
-    $('#step-1, #step-2, #step-3').css({'opacity': '0', 'z-index': '0'});
+    $('#step-1, #step-2, #step-5, #step-3').css({'opacity': '0', 'z-index': '0'});
+
+    //Last screen not showing preview to avoid mess
+    if (toScreen == '#step-3' || toScreen == '#step-2' || toScreen == '#step-5'){
+        $('#preview').hide();
+    } else {
+        $('#preview').show(); 
+    }
 
     //Turn on required 
-    $(toScreen).css({'opacity': '1', 'z-index': '1'});
+    $(toScreen).css({'opacity': '1', 'z-index': '2'});
+
+    //Helper to fix empty areas around
+    $('#helper').css({'opacity': '1', 'z-index': '1'});
 
 }
