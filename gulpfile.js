@@ -4,6 +4,8 @@ var cleanCSS = require('gulp-clean-css');
 var htmlmin = require('gulp-htmlmin');
 var concat = require('gulp-concat');
 var watch = require('gulp-watch');
+var replace = require('gulp-string-replace');
+
 
 gulp.task('concat', function() {
     return gulp.src('./src/*.js')
@@ -33,7 +35,7 @@ gulp.task('min-js', function() {
            },
             noSource: true
         }))
-        .pipe(gulp.dest('./dist/'))
+        .pipe(gulp.dest('../twitter-storm-frontend-prod/dist'))
 });
 
 gulp.task('min-json', function() {
@@ -51,13 +53,14 @@ gulp.task('min-json', function() {
 gulp.task('minify-css', () => {
   return gulp.src('styles.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest('../twitter-storm-frontend-prod/'));
 });
 
 gulp.task('minify-html', () => {
   return gulp.src('index.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest('./dist/'));
+    .pipe(replace(new RegExp('src="./dist/scripts.js"', 'g'), 'src="./dist/scripts.min.js"')) //Replacing src
+    .pipe(gulp.dest('../twitter-storm-frontend-prod/'));
 });
 
 gulp.task('develop', gulp.series('min-js', 'minify-css', 'minify-html'))

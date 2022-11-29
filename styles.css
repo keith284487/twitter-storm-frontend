@@ -55,6 +55,10 @@ textarea:invalid {
 * FORMS
 */
 
+#step-1, #step-2, #step-5, #step-3, #step-4 {
+    max-width: 80vw;
+}
+
 #step-1 {
     z-index: 1;
     position: fixed;
@@ -291,7 +295,7 @@ textarea:invalid {
 }
 
 .step-3-controls {
-    margin-top: 2vh;
+    margin-top: 5vh;
 }
 
 .step-3-controls-back {
