@@ -104,6 +104,19 @@ textarea:invalid {
 
 }
 
+.step-1-replyto {
+    padding-bottom: 3vh;
+
+    font-size: 3vh;
+    font-weight: 800;
+
+}
+
+.step-1-replyto > label {
+    font-size: 2vh;
+
+}
+
 .step-1-date {
     padding-bottom: 3vh;
 
